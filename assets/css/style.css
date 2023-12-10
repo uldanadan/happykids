@@ -536,12 +536,13 @@ li {
   flex: 0 0 auto;
   width: 100%;
   overflow: hidden;
-  border-radius: 90px;
+  border-radius: 50px;
 }
 
 .slide img {
   width: 840px;
   height: 560px;
+  object-fit: cover;
 }
 
 .prev, .next {
@@ -1092,8 +1093,14 @@ li {
   .show {
     display: block;
   }
+  
   .hide {
     display: none;
+  }
+
+  .slide img { 
+    width: 414px;
+    height: 350px;
   }
 
   .footer-mobile  {
