@@ -341,6 +341,7 @@ li {
   background-position: center center;
   border: none;
   padding: 15px 50px;
+  cursor: pointer;
 }
 
 
