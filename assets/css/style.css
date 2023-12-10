@@ -139,6 +139,7 @@ li {
 /* Heaedr */
 
 .header {
+  padding-top: 10px;
   overflow: hidden;
   width: 100%;
   position: fixed;
@@ -1093,7 +1094,7 @@ li {
   .show {
     display: block;
   }
-  
+
   .hide {
     display: none;
   }
