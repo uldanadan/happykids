@@ -92,6 +92,9 @@ let currentIndex = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 
+let allowAutoSlide = true; 
+let autoSlideTimeout; 
+
 function showSlide(index) {
   if (index < 0) {
     currentIndex = totalSlides - 1;
@@ -113,7 +116,52 @@ function prevSlide() {
   showSlide(currentIndex - 1);
 }
 
-setInterval(nextSlide, 3000);
+// Swipe
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.querySelector('.slider-container').addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
+  allowAutoSlide = false; 
+  clearTimeout(autoSlideTimeout); 
+});
+
+document.querySelector('.slider-container').addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].clientX;
+  handleSwipe();
+  allowAutoSlide = true; 
+  startAutoSlide(); 
+});
+
+function handleSwipe() {
+  const swipeThreshold = 50;
+
+  if (touchStartX - touchEndX > swipeThreshold) {
+    nextSlide();
+  } else if (touchEndX - touchStartX > swipeThreshold) {
+    prevSlide();
+  }
+}
+
+document.querySelectorAll('.prev, .next').forEach((button) => {
+  button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    allowAutoSlide = false; 
+    clearTimeout(autoSlideTimeout); 
+  });
+});
+
+function startAutoSlide() {
+  if (allowAutoSlide) {
+    autoSlideTimeout = setTimeout(() => {
+      nextSlide();
+      startAutoSlide(); 
+    }, 4000);
+  }
+}
+
+startAutoSlide();
+
 
 
 // Slider Cards 
