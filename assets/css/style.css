@@ -543,8 +543,8 @@ li {
 
 .slide img {
   width: 840px;
-  height: 560px;
-  object-fit: cover;
+  height: 750px;
+  object-fit: fill;
 }
 
 .prev, .next {
@@ -1103,7 +1103,7 @@ li {
 
   .slide img { 
     width: 414px;
-    height: 350px;
+    height: 400px;
   }
 
   .footer-mobile  {
