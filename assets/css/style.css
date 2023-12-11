@@ -630,6 +630,10 @@ li {
   margin-block: 20px;
 }
 
+.uiyrme_card_text {
+  margin-block: 20px;
+  font-size: 10.5px;
+}
 .uiyrme_card-img img {
   width: 200px;
   height: 200px;
@@ -1017,8 +1021,8 @@ li {
   }
 
   .about_imgs img {
-    width: 147px;
-    height: 110px;
+    width: 189px;
+    height: 150px;
   }
 
   .why_cards, .why_cards:last-child {
@@ -1078,9 +1082,6 @@ li {
   }
   .uiyrme_card-texts h2 {
     white-space: pre-line;
-  }
-  .uiyrme_card-text {
-    font-size: 10.5px;
   }
 
   .uiyrme_btn  {
